@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserProfile {
-	
+	@Id
 	private int user_profile_id;
 	private Long user_ragistration_id;
 	private Date Dob;
