@@ -16,21 +16,21 @@ pipeline {
 
         stage('Build Docker image') {
             steps {
-                sh "docker build -t anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER} ."
+                sh "docker build -t vijayarjani/pernaue-repo:${BUILD_NUMBER} ."
             }
         }
 
         stage('Docker Login') {
             steps {
                 withCredentials([string(credentialsId: 'DockerId', variable: 'Dockerpwd')]) {
-                    sh "docker login -u anvbhaskar -p ${Dockerpwd}"
+                    sh "docker login -u vijayarjani -p ${Dockerpwd}"
                 }
             }
         }
 
         stage('Docker Push') {
             steps {
-                sh "docker push anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER}"
+                sh "docker push vijayarjani/pernaue-repo:${BUILD_NUMBER}"
             }
         }
 
