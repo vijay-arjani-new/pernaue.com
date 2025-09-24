@@ -6,4 +6,5 @@ import com.example.demo.entity.UserProfile;
 
 public interface UserProfileRagistory extends JpaRepository<UserProfile, Long> {
 
+	
 }

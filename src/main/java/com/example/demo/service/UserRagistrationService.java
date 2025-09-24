@@ -7,10 +7,11 @@ import com.example.demo.pernaueRagistory.UserRagistrationRepository;
 
 @Service // Makes this class a Spring Bean
 public class UserRagistrationService {
-
+	
+	@Autowired
     private final UserRagistrationRepository ragistrationRepository;
 
-    @Autowired
+   
     public UserRagistrationService(UserRagistrationRepository ragistrationRepository) {
         this.ragistrationRepository = ragistrationRepository;
     }

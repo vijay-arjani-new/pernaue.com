@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import java.security.Provider.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,9 +22,12 @@ public class UserRagistrationController {
     }
 
     @PostMapping 
-    public UserRagistration CreateUser(@RequestBody UserRagistration userRagistration) {
-        System.out.println(userRagistration.toString());
-        return ragistrationService.create(userRagistration);
+    public ResponseEntity<?> CreateUser(@RequestBody UserRagistration userRagistration) {
+       
+        UserRagistration ragistration=	ragistrationService.create(userRagistration);
+    	
+    	
+        return ResponseEntity.status(200).body(ragistration);
     }
 }
 

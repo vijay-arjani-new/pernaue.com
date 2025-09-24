@@ -3,6 +3,8 @@ package com.example.demo.entity;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +18,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserProfile {
 	@Id
-	private int user_profile_id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long user_profile_id;
 	private Long user_ragistration_id;
 	private Date Dob;
 	private int age;
